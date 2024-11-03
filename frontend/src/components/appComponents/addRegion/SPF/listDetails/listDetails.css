@@ -1,0 +1,54 @@
+.spf-list-details-inner {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 10px;
+    font-size: 25px;
+}
+
+.list-left .list-name-container,
+.list-left .list-details-container {
+    width: 100%;
+    font-family:"EON BrixSansWeb", "Poppins", "sans-serif";
+}
+
+.list-name-container .highlight,
+.list-details-container .highlight{
+    border: 2px solid #B00402;
+}
+
+.list-name-container input,
+.list-details-container textarea
+{
+    border: 2px solid #CCCBCA;
+    border-radius: 8px;
+    width: 100%;
+    font-size: 20px;
+    box-sizing: border-box;
+}
+
+
+.list-name-container input{
+    height: 48px;
+    padding: 0 10px;
+}
+
+.list-name-container span,
+.list-details-container span{
+    margin-left: 8px;
+    color: #B00402;
+    font-size: 18px;
+}
+
+.list-details-container textarea{
+    padding: 5px 10px;
+}
+
+.list-name-container input:focus{
+    border: 2px solid #1EA2B1;
+}
+
+.list-name-container input:hover,
+.list-details-container textarea:hover{
+    border: 2px solid #1EA2B1;
+}
+

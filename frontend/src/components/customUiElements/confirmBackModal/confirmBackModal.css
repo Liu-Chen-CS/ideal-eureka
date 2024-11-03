@@ -1,0 +1,74 @@
+.confirm-modal-heading {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.confirm-modal-buttons {
+  text-align: right;
+}
+
+.confirm-modal-sub-heading {
+  margin-bottom: 20px;
+}
+
+.confirm-modal-button {
+  margin-right: 10px;
+}
+
+.confirm-modal-download-buttons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.confirm-modal-download-buttons .download-container {
+  position: relative;
+}
+
+.download-container span {
+  position: absolute;
+  top: -20px;
+  left: 8%;
+  font-weight: bold;
+}
+
+.confirm-modal-correct-buttons .correct-container ul li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.correct-container ul{
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.correct-container ul li{
+  display: grid;
+  grid-template-columns: 300px 300px 150px;
+  column-gap: 20px;
+}
+
+.correct-container ul .box1{
+  font-weight: bold;
+}
+
+.correct-container ul .box1, .box2{
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 15px;
+  border:3px solid #8F9192;
+  border-radius: 5px;
+  position: relative;
+}
+
+.correct-container ul .box{
+  margin-bottom: 20px;
+}
+
+.correct-container ul .box:hover{
+  border: 3px solid #1EA2B1;
+  cursor: pointer;
+}

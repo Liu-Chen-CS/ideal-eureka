@@ -1,0 +1,38 @@
+.hover-button-container {
+  position: fixed;
+  right: 0;
+  top: 20%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  transition: width 1s ease;
+  width: 55px;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.hover-button-icon {
+  width: 25px;
+  height: 25px;
+}
+
+.hover-button-label {
+  margin-left: 10px;
+  margin-right: 10px;
+  transition: opacity 0.3s ease;
+  text-wrap: nowrap;
+}
+
+.hover-button-container:hover .hover-button-label {
+  opacity: 1;
+}
+
+.hover-button {
+  display: flex;
+  align-items: center;
+  border: none;
+  background: var(--eon-red);
+  border-radius: 15px;
+  cursor: pointer;
+  padding: 10px 20px;
+}

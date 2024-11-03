@@ -1,0 +1,160 @@
+.navbar {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.navbar-colors {
+  display: flex;
+  height: 8px;
+  width: 100%;
+}
+
+.navbar-color {
+  height: 8px;
+}
+
+.navbar-color:nth-child(1) {
+  width: 60%;
+  background-color: rgb(30, 162, 177);
+}
+
+.navbar-color:nth-child(2) {
+  width: 10%;
+  background-color: rgb(227, 224, 0);
+}
+
+.navbar-color:nth-child(3) {
+  width: 30%;
+  background-color: rgb(234, 27, 10);
+}
+
+.navbar-main {
+  display: flex;
+  width: 85%;
+  max-width: 1500px;
+  border-bottom: 4px solid #d7d7d8;
+}
+
+.navbar-section {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-section-left {
+  flex-grow: 1;
+}
+
+.navbar-section-right {
+  flex-grow: 0;
+}
+
+.navbar-link {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  margin: 0 10px;
+  padding: 8px;
+  transition: background-color 0.2s;
+  text-decoration: none;
+  color: #39393a;
+  letter-spacing: 0.05rem;
+  padding: 20px 20px;
+}
+
+.navbar-link:hover,
+.navbar-link:focus {
+  background-color: #e2e6ea;
+  outline: none;
+}
+
+.navbar-link.current {
+  font-weight: bold;
+}
+
+.navbar-language-selector {
+  display: flex;
+  margin-right: 20px;
+}
+
+.navbar-flag-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin: 0 5px;
+  transition: transform 0.2s;
+}
+
+.navbar-flag-button:focus {
+  outline: 2px solid #0056b3;
+  outline-offset: 2px;
+}
+
+.navbar-flag-button:hover {
+  transform: scale(1.05);
+}
+
+.navbar-flag {
+  width: 40px;
+  opacity: 0.9;
+}
+
+.navbar-user-icon {
+  margin-right: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.navbar-user-icon:focus {
+  outline: 2px solid #0056b3;
+  outline-offset: 2px;
+}
+
+.navbar-logo {
+  width: 120px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.navbar-logo:hover,
+.navbar-logo:focus {
+  opacity: 0.8;
+  outline: none;
+}
+
+.navbar-link.active {
+  background-color: #d3d3d3;
+  font-weight: bold;
+}
+
+.navbar-bonus-plus {
+  font-weight: bold;
+  color: #39393a;
+  cursor: pointer;
+  font-size: 22px;
+  margin: 0 10px;
+  padding: 8px;
+  transition: background-color 0.2s;
+  text-decoration: none;
+  letter-spacing: 0.05rem;
+}
+
+@media (max-width: 900px) {
+  .navbar-main {
+    flex-direction: column;
+  }
+
+  .navbar-section-left{
+    display: flex;
+    justify-content: center;
+  }
+
+  .navbar-section-right {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+  }
+}

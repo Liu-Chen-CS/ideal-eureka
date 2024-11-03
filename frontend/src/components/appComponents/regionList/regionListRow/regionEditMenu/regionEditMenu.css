@@ -1,0 +1,61 @@
+.region-edit-menu-container {
+    background-color: rgb(255, 255, 255);
+    border-radius: 2px;
+    font-size: 18px;
+    overflow: hidden;
+    width: 190px;
+    box-shadow:
+            0 2px 4px -1px rgba(0, 0, 0, 0.2),
+            0 4px 5px 0 rgba(0, 0, 0, 0.14),
+            0 1px 10px 0 rgba(0, 0, 0, 0.12);
+    padding: 10px 0;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3); /* dunkler Hintergrund */
+    z-index: 1000; /* damit es über allem anderen liegt */
+}
+
+.edit-menu-option {
+    margin-bottom: 10px;
+    padding: 10px;
+    padding-left: 15px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.edit-menu-option:last-child {
+    margin-bottom: 0;
+}
+
+.edit-menu-option:hover {
+    border-radius: 2px;
+    background-color: rgb(232, 232, 232);
+}
+
+.edit-hidden {
+    display: none;
+}
+
+.delete-modal-buttons {
+    text-align: right;
+}
+
+.region-edit-menu-delete-label {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.region-edit-menu-sub-delete-label {
+    margin-bottom: 20px;
+}
+
+.delete-modal-button {
+    margin-right: 10px;
+}

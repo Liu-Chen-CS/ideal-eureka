@@ -1,0 +1,13 @@
+.search-place-container input {
+    border: 2px solid #CCCBCA;
+    border-radius: 8px;
+    width: 100%;
+    font-size: 20px;
+    box-sizing: border-box;
+    height: 48px;
+    padding: 0 10px;
+}
+
+.search-place-container input:hover{
+    border: 2px solid #1EA2B1;
+}

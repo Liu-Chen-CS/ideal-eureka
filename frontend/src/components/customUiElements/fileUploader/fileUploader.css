@@ -1,0 +1,207 @@
+.wrapper {
+  width: 100%;
+  height: 100%;
+  max-height: 500px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.loading-icon-fileuploader{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper .error-container,
+.wrapper .success-container{
+  width: 100%;
+  height: 70%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-around;
+  column-gap: 10px;
+}
+
+.error-container .error-left,
+.success-container .success-left
+{
+  width: 100px;
+  height: 100%;
+  background-color: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.error-container .error-left img,
+.success-container .success-left img
+{
+  width: 25px;
+  height: auto;
+}
+
+.error-container .error-right,
+.success-container .success-right
+{
+  flex-grow: 5;
+  height: 100%;
+  background-color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  box-sizing: border-box;
+  justify-content: space-between;
+}
+
+.error-container .error-right .file-info:hover,
+.success-container .success-right .file-info:hover{
+  cursor: default;
+}
+
+.error-right .cancel-button,
+.success-right .cancel-button
+{
+  cursor: pointer;
+}
+
+.error-right .cancel-button img,
+.success-right .cancel-button img
+{
+  width: 15px;
+  height: auto;
+}
+
+.error-right .file-info,
+.success-right .file-info{
+  display: flex;
+  flex-direction: column;
+}
+
+.error-right .file-info span:last-child{
+  color: red;
+}
+
+.wrapper .form {
+  width: 100%;
+  height: 70%;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 5px;
+  border: 3px dashed #8f9192;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.wrapper .drag-over{
+  border: 3px dashed red;
+}
+
+.form img{
+  width: 25px;
+  height: auto;
+}
+
+.form :where(p) {
+  color: #8f9192;
+}
+
+.form p {
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.wrapper .upload-wrapper {
+  height: 40%;
+  position:relative;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.wrapper .upload-wrapper .eonui-primary{
+  cursor: not-allowed;
+}
+
+.wrapper .upload-wrapper .warning-msg{
+  align-self: flex-start;
+  color: #B00402;
+}
+
+section{
+  flex-grow: 2;
+}
+
+section .row {
+  background: #f9f6f4;
+  list-style: none;
+  padding: 15px 20px;
+  border-radius: 5px;
+  width: 50%;
+  min-width: 40%;
+  height: 50%;
+}
+.progress-area .row .content {
+  width: 100%;
+  margin-left: 15px;
+}
+section .details span {
+  font-size: 14px;
+}
+.progress-area .details {
+  display: flex;
+  align-items: center;
+  margin-bottom: 7px;
+  justify-content: space-between;
+}
+
+.progress-area .content .progress-bar {
+  height: 6px;
+  width: 100%;
+  margin-bottom: 4px;
+  background: #fff;
+  border-radius: 30px;
+}
+
+.content .progress-bar .progress {
+  height: 100%;
+  width: 0%;
+  background: #8f9192;
+  border-radius: inherit;
+}
+
+.content .progress-bar .green-bar {
+  background: #1ea2b1;
+  transition: 0.3s linear;
+}
+
+.uploaded-area {
+  max-height: 100px;
+  overflow-y: scroll;
+}
+
+.uploaded-area::-webkit-scrollbar {
+  width: 0px;
+}
+
+.uploaded-area .row .content {
+  display: flex;
+  align-items: center;
+}
+
+.uploaded-area .row .details {
+  display: flex;
+  margin-left: 15px;
+  flex-direction: column;
+}
+
+.uploaded-area .row .details .size {
+  color: #404040;
+  font-size: 11px;
+}

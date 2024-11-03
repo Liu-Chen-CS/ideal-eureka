@@ -1,0 +1,13 @@
+.spf-list-data-inner{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 10px;
+    row-gap: 20px;
+}
+
+.list-left{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 25px;
+}

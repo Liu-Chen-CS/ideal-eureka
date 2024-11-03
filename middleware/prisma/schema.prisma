@@ -1,0 +1,46 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model region_division {
+  region_division_id Int        @id @default(autoincrement())
+  branch             String?
+  client             String?
+  region_division    String?
+  version            Int?
+  createdOn          String?
+  restmenge          restmenge?
+  list               list[]
+}
+
+model restmenge {
+  restmenge_id       Int              @id @default(autoincrement())
+  restmenge          String?
+  region_division_id Int?             @unique
+  region_division    region_division? @relation(fields: [region_division_id], references: [region_division_id], onDelete: Cascade)
+}
+
+model list {
+  list_id            Int              @id @default(autoincrement())
+  list_name          String?
+  list_details       String?
+  region_division_id Int?
+  region_division    region_division? @relation(fields: [region_division_id], references: [region_division_id], onDelete: Cascade)
+  place              place[]
+}
+
+model place {
+  place_id   Int     @id @default(autoincrement())
+  place_name String?
+  postcode   String?
+  list_id    Int?
+  list       list?   @relation(fields: [list_id], references: [list_id], onDelete: Cascade)
+}

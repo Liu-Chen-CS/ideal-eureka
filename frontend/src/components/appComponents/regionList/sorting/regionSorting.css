@@ -1,0 +1,143 @@
+.sorting-container {
+  width: 280px;
+  background-color: var(--eon-ultralightgrey);
+  margin-right: 25px;
+  user-select: none;
+  margin-bottom: -20px;
+}
+
+.sorting-icon {
+  padding: 25px;
+  width: 16px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.sorting-icon-arrow {
+  cursor: pointer;
+  width: 15px;
+  justify-self: flex-end;
+  margin-right: 18px;
+  transition: 0.3s all;
+  transform: rotate(180deg);
+  user-select: none;
+}
+
+.sorting-section-body {
+  display: none;
+}
+
+.sorting-label-bar {
+  display: flex;
+  align-items: center;
+  background-color: var(--eon-lightgrey);
+  width: 100%;
+  height: 56px;
+  cursor: pointer;
+}
+
+.sorting-label {
+  flex: 1;
+  padding-left: 25px;
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: 0.03rem;
+}
+
+.sorting-option-label {
+  font-size: 20px;
+}
+
+.sorting-expanded .sorting-icon-arrow {
+  transform: rotate(0deg);
+}
+
+.sorting-expanded .sorting-section-body {
+  display: block;
+}
+
+.sorting-checkbox-wrapper {
+  margin: 10px 20px;
+}
+
+.sorting-checkbox-row {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  font-size: 15px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.sorting-checkbox-row input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 22px;
+  width: 22px;
+  background-color: #eee;
+  border: 2px solid grey;
+  border-radius: 30%;
+}
+
+.sorting-checkbox-row:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.sorting-checkbox-row input:checked ~ .checkmark {
+  background-color: #2196f3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.sorting-checkbox-row input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.sorting-checkbox-row .checkmark:after {
+  left: 8px;
+  top: 4px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.sorting-button-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 0;
+  margin: 15px 0;
+}
+
+@media (max-width: 900px) {
+  .sorting-container {
+    width: 95%;
+    margin-bottom: 20px;
+  }
+}
