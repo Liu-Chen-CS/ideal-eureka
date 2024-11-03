@@ -1,7 +1,7 @@
 import "./searchPlace.css";
 import {useEffect, useState} from "react";
 import {useTranslation} from "react-i18next";
-import InputWrapper from "../../../../../customUiElements/inputWrapper/InputWrapper";
+import MaterialInputAdornmentWrapper from "../../../../../customUiElements/materialUiWrapper/materialInputAdornmentWrapper/MaterialInputAdornmentWrapper";
 
 interface Props {
     regionId: string | undefined;
@@ -34,7 +34,7 @@ const SearchPlace: React.FC<Props> = ({regionId, helper, handleSearchTerm}) => {
                         }}
                     ></input>
                 ) : (
-                    <InputWrapper
+                    <MaterialInputAdornmentWrapper
                         name="listHinzufugen.searchTerm"
                         type="text"
                         label={t("searchByCode/place")}

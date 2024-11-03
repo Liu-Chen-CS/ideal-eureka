@@ -9,6 +9,7 @@ import contract from "../../../assets/contract.svg";
 import ConfirmModal from "../confirmBackModal/confirmBackModal";
 import upload from "../../../assets/upload.svg";
 import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
+import MaterialButtonWrapper from "../materialUiWrapper/materialButtonWrapper/MaterialButtonWrapper";
 
 interface Props {
     createList: (list: List) => void,
@@ -287,36 +288,39 @@ const FileUploader: React.FC<Props> = ({createList, isFileLoading, handleFileLoa
                 )}
                 <div className="upload-wrapper">
                     {(isSucceedUpload) ? (
-                        <button
+                        <MaterialButtonWrapper
                             onClick={handleCreateList}
-                            style={{position: "absolute", right: 0}}
+                            // style={{position: "absolute", right: 0}}
+                            variant="contained"
+                            label={t("validateList")}
                         />
                     ) : (
-                        <button
+                        <MaterialButtonWrapper
+                            variant="contained"
+                            label={t("selectFile")}
                             onClick={handleFileUploadClick}
                         />)}
 
                 </div>
-                {
-                    showModal && (
-                        <ConfirmModal
-                            closeModal={() => setShowModal(false)}
-                            confirmationFunction={() => {
-                                setShowModal(false);
-                            }}
-                            heading={modalTexts[0]}
-                            subHeading={modalTexts[1]}
-                            confirmButtonText="Okay"
-                            regionalCustomization={{
-                                downloadTheme: {
-                                    content: duplicateFileContent,
-                                    msg: "Download der Duplikate",
-                                    switchOffModal,
-                                },
-                                correctTheme: null,
-                            }}
-                        />
-                    )
+                {showModal && (
+                    <ConfirmModal
+                        closeModal={() => setShowModal(false)}
+                        confirmationFunction={() => {
+                            setShowModal(false);
+                        }}
+                        heading={modalTexts[0]}
+                        subHeading={modalTexts[1]}
+                        confirmButtonText="Okay"
+                        regionalCustomization={{
+                            downloadTheme: {
+                                content: duplicateFileContent,
+                                msg: "Download der Duplikate",
+                                switchOffModal,
+                            },
+                            correctTheme: null,
+                        }}
+                    />
+                )
                 }
             </div>
         )

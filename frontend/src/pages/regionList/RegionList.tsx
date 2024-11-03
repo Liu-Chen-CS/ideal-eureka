@@ -11,6 +11,9 @@ import {useNavigate} from "react-router-dom";
 import {useTranslation} from "react-i18next";
 import LoadingSpinner from "../../components/customUiElements/LoadingSpinner/LoadingSpinner";
 import {RegionDivisionVO} from "../../api/region/models";
+import {Button} from "@mui/material";
+import MaterialButtonWrapper
+    from "../../components/customUiElements/materialUiWrapper/materialButtonWrapper/MaterialButtonWrapper";
 
 const RegionList: React.FC = () => {
     const navigate = useNavigate();
@@ -253,10 +256,11 @@ const RegionList: React.FC = () => {
                             <div className="no-data-found">{t("noDataFound")}</div>
                         )
                     }
-                    <button
-                        className="navbar-add-region-bottom-button"
-                        onClick={() => navigate("/regions/new")}
-                    ></button>
+                    <MaterialButtonWrapper
+                        variant="contained"
+                        label={t("addNewRegion")}
+                        onClick={(): void => navigate("/regions/new")}
+                    />
                 </div>
             </div>
         </div>

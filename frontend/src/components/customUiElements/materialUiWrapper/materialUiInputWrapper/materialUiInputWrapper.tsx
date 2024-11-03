@@ -26,7 +26,6 @@ const MaterialUiTextFieldWrapper: React.FC<MaterialUiTextFieldWrapperProps> = ({
 }) => {
   const { setFieldValue } = useFormikContext();
   const [field, meta] = useField(name);
-
   const customStyles = {
     "& .MuiOutlinedInput-root": {
       fontSize: "18px",
