@@ -4,6 +4,8 @@ import React, {useCallback, useEffect, useMemo, useState} from "react";
 import {FixedSizeList as VirtualList} from 'react-window';
 import {useTranslation} from "react-i18next";
 import ConfirmModal from "../../../../customUiElements/confirmBackModal/confirmBackModal";
+import MaterialButtonWrapper
+    from "../../../../customUiElements/materialUiWrapper/materialButtonWrapper/MaterialButtonWrapper";
 
 interface Props {
     places: Place[] | null;
@@ -188,10 +190,12 @@ const PlaceInfo: React.FC<Props> = ({places, searchTerm, toListDetails, uniqueId
                                                 {
                                                     !isValid && (
                                                         <div className="correct-container">
-                                                            <button
+                                                            <MaterialButtonWrapper
                                                                 onClick={() => {
                                                                     handleCorrect(postcode, id as symbol);
                                                                 }}
+                                                                label={t("correct")}
+                                                                variant="outlined"
                                                             />
                                                         </div>
                                                     )

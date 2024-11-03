@@ -11,9 +11,11 @@ import {useNavigate} from "react-router-dom";
 import {useTranslation} from "react-i18next";
 import LoadingSpinner from "../../components/customUiElements/LoadingSpinner/LoadingSpinner";
 import {RegionDivisionVO} from "../../api/region/models";
-import {Button} from "@mui/material";
+import {Button, IconButton, InputAdornment, OutlinedInput, TextField} from "@mui/material";
 import MaterialButtonWrapper
     from "../../components/customUiElements/materialUiWrapper/materialButtonWrapper/MaterialButtonWrapper";
+import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
+import SaveIcon from "@mui/icons-material/Save";
 
 const RegionList: React.FC = () => {
     const navigate = useNavigate();
@@ -198,6 +200,40 @@ const RegionList: React.FC = () => {
                     resetSorting={resetSorting}
                 />
                 <div className="region-list-list">
+                    <TextField
+                        label={t("search")}
+                        InputProps={{
+                            endAdornment: <InputAdornment position="end"><SearchOutlinedIcon/></InputAdornment>,
+                        }}
+                        fullWidth
+                        sx={{
+                            "& .MuiOutlinedInput-root": {
+                                fontSize: "18px",
+                                height: "48px",
+                                fontFamily: "EONBrixSans, Arial, Geneva, Helvetica, sans-serif",
+                                borderRadius: "8px",
+                                background: "#ffffff",
+                                color: "#262626",
+                                cursor: "default",
+                                "& .MuiOutlinedInput-notchedOutline": {
+                                    borderColor: "#cccbca",
+                                    borderWidth: "3px",
+                                },
+                                "&:hover .MuiOutlinedInput-notchedOutline": {
+                                    borderColor: "#1ea2b1",
+                                },
+                                "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                                    borderColor: "#1ea2b1",
+                                },
+                                "&.Mui-error .MuiOutlinedInput-notchedOutline": {
+                                    borderColor: "#b00402",
+                                },
+                            },
+                            "& .MuiOutlinedInput-input.Mui-disabled": {
+                                cursor: "not-allowed",
+                            },
+                        }}
+                    />
                     {
                         (selectedSortingOptions.searchTerm[0] !== undefined && selectedSortingOptions.searchTerm[0].length !== 0) && (
                             <div className={`search-suggestion-container`}>

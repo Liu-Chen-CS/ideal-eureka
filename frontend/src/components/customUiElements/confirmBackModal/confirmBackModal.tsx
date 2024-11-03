@@ -137,7 +137,7 @@ const ConfirmModal: React.FC<Props> = ({
                     <MaterialButtonWrapper
                         label={confirmButtonText}
                         onClick={() => confirmationFunction()}
-                        variant="outlined"
+                        variant="contained"
                     />
                 </div>
             </Modal>
