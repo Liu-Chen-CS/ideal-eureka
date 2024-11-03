@@ -1,0 +1,10 @@
+{
+"name": "FERedesign",
+  "version": "0.2.0",
+  "description": "Full rewrite of the bonus+ tool",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "middleware"
+  ]
+}
