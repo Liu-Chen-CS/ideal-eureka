@@ -4,6 +4,7 @@ import Modal from "react-modal";
 import "./confirmBackModal.css";
 import React, {useCallback} from "react";
 import {Place} from "../../../forms/addRegion/regionFormConfig";
+import MaterialButtonWrapper from "../materialUiWrapper/materialButtonWrapper/MaterialButtonWrapper";
 
 interface Props {
     heading: string;
@@ -95,12 +96,10 @@ const ConfirmModal: React.FC<Props> = ({
                             regionalCustomization.downloadTheme ? (
                                 <div className="download-container">
                                     <span className="download-info">{regionalCustomization?.downloadTheme?.msg}</span>
-                                    <EonUiButton
-                                        text={t("download")}
-                                        icon="download"
-                                        iconPosition="left"
-                                        rank="secondary"
-                                        onButtonClick={() => regionalCustomization?.downloadTheme && downloadDuplicateFile(regionalCustomization?.downloadTheme.content)}
+                                    <MaterialButtonWrapper
+                                        label={t("download")}
+                                        variant="outlined"
+                                        onClick={() => regionalCustomization?.downloadTheme && downloadDuplicateFile(regionalCustomization?.downloadTheme.content)}
                                     />
                                 </div>
                             ) : (
@@ -116,12 +115,11 @@ const ConfirmModal: React.FC<Props> = ({
                                                         <span className="box box1">{postcode}</span>
                                                         <span className="box box2">{placeName}</span>
                                                         <div>
-                                                            <EonUiButton
-                                                                rank="secondary"
-                                                                text={t("replace")}
-                                                                className="confirm-modal-button"
-                                                                onButtonClick={() => regionalCustomization.correctTheme?.toPlaceInfo(placeName)}
-                                                            ></EonUiButton>
+                                                            <MaterialButtonWrapper
+                                                                label={t("replace")}
+                                                                onClick={() => regionalCustomization.correctTheme?.toPlaceInfo(placeName)}
+                                                                variant="outlined"
+                                                            />
                                                         </div>
                                                     </li>
                                                 ))
@@ -129,18 +127,18 @@ const ConfirmModal: React.FC<Props> = ({
                                         }
                                     </ul>
                                 </div>)
-                        ) : (<EonUiButton
-                                rank="secondary"
-                                text={t("cancel")}
-                                className="confirm-modal-button"
-                                onButtonClick={handleClose}
-                            ></EonUiButton>
+                        ) : (<MaterialButtonWrapper
+                                label={t("cancel")}
+                                variant="outlined"
+                                onClick={handleClose}
+                            />
                         )
                     }
-                    <EonUiButton
-                        text={confirmButtonText}
-                        onButtonClick={() => confirmationFunction()}
-                    ></EonUiButton>
+                    <MaterialButtonWrapper
+                        label={confirmButtonText}
+                        onClick={() => confirmationFunction()}
+                        variant="outlined"
+                    />
                 </div>
             </Modal>
         </div>

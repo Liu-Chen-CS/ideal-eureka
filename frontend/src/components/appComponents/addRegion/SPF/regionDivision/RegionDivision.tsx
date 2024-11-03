@@ -6,7 +6,11 @@ import { useCallback, useState } from "react";
 import MaterialUiSelectWrapper from "../../../../customUiElements/materialUiWrapper/materialUiSelectWrapper/materialUiSelectWrapper";
 import MaterialUiAccordionWrapper
   from "../../../../customUiElements/materialUiWrapper/materialUiAccordionWrapper/materialUiAccordionWrapper";
-import InputWrapper from "../../../../customUiElements/inputWrapper/InputWrapper";
+import MaterialInputAdornmentWrapper from "../../../../customUiElements/materialUiWrapper/materialInputAdornmentWrapper/MaterialInputAdornmentWrapper";
+import MaterialUiTextFieldWrapper
+  from "../../../../customUiElements/materialUiWrapper/materialUiInputWrapper/materialUiInputWrapper";
+import MaterialUiInputWrapper
+  from "../../../../customUiElements/materialUiWrapper/materialUiInputWrapper/materialUiInputWrapper";
 
 interface Props {
   prefixName: string;
@@ -36,11 +40,11 @@ const RegionDivision: React.FC<Props> = ({ prefixName, options }) => {
   return (
       <MaterialUiAccordionWrapper title={t("regionDivisionConfig")}>
         <div className="spf-regionDivision-data-inner">
-          <InputWrapper
+          <MaterialInputAdornmentWrapper
               type="text"
               name={`${prefixName}.newRegionDivision`}
               label={t("addNewRegionDivisionLabel")}
-              onIconClick={handleAddNewOption}
+              // onIconClick={handleAddNewOption}
           />
           <MaterialUiSelectWrapper
               name="regionDivisionConfig.regionDivisionOption"
@@ -48,7 +52,7 @@ const RegionDivision: React.FC<Props> = ({ prefixName, options }) => {
               label={t("regionDivision")}
               newOption={newOption}
           />
-          <InputWrapper
+          <MaterialUiInputWrapper
               type="text"
               name={`${prefixName}.version`}
               label="Version"

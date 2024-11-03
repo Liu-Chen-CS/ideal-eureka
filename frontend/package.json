@@ -6,6 +6,7 @@
     "@emotion/styled": "^11.13.0",
     "@eon-ui/eon-ui-components": "4.5.1-eon",
     "@eon-ui/eon-ui-components-react": "^4.5.1",
+    "@mui/icons-material": "^6.1.6",
     "@mui/material": "^5.16.7",
     "@mui/styled-engine-sc": "^6.0.0-alpha.18",
     "@mui/x-date-pickers": "^7.22.0",

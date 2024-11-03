@@ -2,7 +2,9 @@ import "./restmenge.css";
 import { useTranslation } from "react-i18next";
 import MaterialUiAccordionWrapper
   from "../../../../customUiElements/materialUiWrapper/materialUiAccordionWrapper/materialUiAccordionWrapper";
-import InputWrapper from "../../../../customUiElements/inputWrapper/InputWrapper";
+import MaterialInputAdornmentWrapper from "../../../../customUiElements/materialUiWrapper/materialInputAdornmentWrapper/MaterialInputAdornmentWrapper";
+import MaterialUiInputWrapper
+    from "../../../../customUiElements/materialUiWrapper/materialUiInputWrapper/materialUiInputWrapper";
 
 
 interface Props {
@@ -14,7 +16,7 @@ const Restmenge: React.FC<Props> = ({ prefixName }) => {
 
   return (
       <MaterialUiAccordionWrapper title={t("restmenge")}>
-        <InputWrapper
+        <MaterialUiInputWrapper
             type="text"
             name={`${prefixName}`}
             label={t("remainingQuantityLabel")}

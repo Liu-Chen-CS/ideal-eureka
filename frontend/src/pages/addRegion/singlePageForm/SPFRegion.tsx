@@ -15,6 +15,8 @@ import React, {useCallback, useEffect, useMemo, useRef, useState} from "react";
 import ConfirmModal from "../../../components/customUiElements/confirmBackModal/confirmBackModal";
 import {useNewRegion} from "../../../hooks/hooks";
 import ListDetails from "../../../components/appComponents/addRegion/SPF/listDetails/ListDetails";
+import MaterialButtonWrapper
+    from "../../../components/customUiElements/materialUiWrapper/materialButtonWrapper/MaterialButtonWrapper";
 
 interface SPFRegionProps {
     confirmBack: () => void;
@@ -243,14 +245,18 @@ const SPFRegion: React.FC<SPFRegionProps> = (
                                 }
 
                                 <div className="single-page-form-button-row">
-                                    <button
+                                    <MaterialButtonWrapper
+                                        variant="outlined"
                                         onClick={(): void => confirmBack()}
+                                        label={t("goBack")}
                                     />
-                                    <button
+                                    <MaterialButtonWrapper
+                                        variant="contained"
                                         onClick={checkDataMissing}
+                                        label={t("buttonSave")}
                                     />
                                 </div>
-                                {/*<pre>{JSON.stringify(formik, null, 2)}</pre>*/}
+                                <pre>{JSON.stringify(formik, null, 2)}</pre>
                             </Form>
                         </>
                     );

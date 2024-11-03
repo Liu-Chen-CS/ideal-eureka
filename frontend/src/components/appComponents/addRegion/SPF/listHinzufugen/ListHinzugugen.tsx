@@ -11,7 +11,11 @@ import {useState} from "react";
 import MaterialUiAccordionWrapper
   from "../../../../customUiElements/materialUiWrapper/materialUiAccordionWrapper/materialUiAccordionWrapper";
 import TextAreaWrapper from "../../../../customUiElements/textAreaWrapper/TextAreaWrapper";
-import InputWrapper from "../../../../customUiElements/inputWrapper/InputWrapper";
+import MaterialInputAdornmentWrapper from "../../../../customUiElements/materialUiWrapper/materialInputAdornmentWrapper/MaterialInputAdornmentWrapper";
+import MaterialUiInputWrapper
+  from "../../../../customUiElements/materialUiWrapper/materialUiInputWrapper/materialUiInputWrapper";
+import MaterialMultilineInputWrapper
+  from "../../../../customUiElements/materialUiWrapper/materialMultilineInputWrapper/MaterialMultilineInputWrapper";
 
 
 interface Props {
@@ -42,12 +46,12 @@ const ListHinzugugen: React.FC<Props> = ({prefixName, regionId, createList, isFi
       <MaterialUiAccordionWrapper title={t("addList")}>
         <div className="spf-list-data-inner">
           <div className="list-left">
-            <InputWrapper
+            <MaterialUiInputWrapper
                 type="text"
                 name={`${prefixName}.listName`}
                 label={t("enterListName")}
             />
-            <TextAreaWrapper name={`${prefixName}.listDetails`}/>
+            <MaterialMultilineInputWrapper name={`${prefixName}.listDetails`}/>
           </div>
           {mode === "create" ? (
               <div className="list-right">
