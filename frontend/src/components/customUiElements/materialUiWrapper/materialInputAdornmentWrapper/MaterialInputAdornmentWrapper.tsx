@@ -19,7 +19,6 @@ const MaterialInputAdornmentWrapper: React.FC<Props> = ({type, name, label, onIc
         "& .MuiOutlinedInput-root": {
             fontSize: "18px",
             height: "48px",
-            width: "400px",
             fontFamily: "EONBrixSans, Arial, Geneva, Helvetica, sans-serif",
             borderRadius: "8px",
             background: disabled ? "#f0f0f0" : "#ffffff",
@@ -43,19 +42,11 @@ const MaterialInputAdornmentWrapper: React.FC<Props> = ({type, name, label, onIc
             cursor: "not-allowed",
         },
     };
-
     const [field, meta] = useField(name);
-    const [showPassword, setShowPassword] = useState(false);
-    const handleClickShowPassword = () => setShowPassword((show) => !show);
-    const handleMouseDownPassword = (event: React.MouseEvent<HTMLButtonElement>) => {
-        event.preventDefault();
-    };
-    const handleMouseUpPassword = (event: React.MouseEvent<HTMLButtonElement>) => {
-        event.preventDefault();
-    };
     return (
         <div className="input-wrapper-container">
             <TextField
+                fullWidth
                 {...field}
                 label="With normal TextField"
                 id="outlined-start-adornment"

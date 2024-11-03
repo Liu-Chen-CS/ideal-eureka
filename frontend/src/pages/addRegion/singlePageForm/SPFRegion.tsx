@@ -243,7 +243,6 @@ const SPFRegion: React.FC<SPFRegionProps> = (
                                         />)
                                     }))
                                 }
-
                                 <div className="single-page-form-button-row">
                                     <MaterialButtonWrapper
                                         variant="outlined"

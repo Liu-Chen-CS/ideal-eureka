@@ -8,6 +8,8 @@ import {useFormikContext} from "formik";
 import ConfirmModal from "../../../../customUiElements/confirmBackModal/confirmBackModal";
 import MaterialUiAccordionWrapper
     from "../../../../customUiElements/materialUiWrapper/materialUiAccordionWrapper/materialUiAccordionWrapper";
+import MaterialButtonWrapper
+    from "../../../../customUiElements/materialUiWrapper/materialButtonWrapper/MaterialButtonWrapper";
 
 interface Props {
     indexNum: number;
@@ -159,11 +161,11 @@ const ListDetails: React.FC<Props> = ({
                     }} handleSearchTerm={handleSearchTerm}/>
                     {
                         values.mode === "create" && (
-                            <button
-                                onClick={() => {
-                                    handleDeleteList()
-                                }}
-                                style={{marginTop: "10px"}}
+                            <MaterialButtonWrapper
+                                variant="outlined"
+                                onClick={handleDeleteList}
+                                label={t("deleteList")}
+                                // style={{marginTop: "10px"}}
                             />
                         )
                     }

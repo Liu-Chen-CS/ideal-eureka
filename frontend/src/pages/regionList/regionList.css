@@ -17,6 +17,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    /*background-color: aqua;*/
 }
 
 .region-list-list .search-suggestion-container {
@@ -69,7 +70,7 @@
     font-size: 18px;
     letter-spacing: 0.03rem;
     text-align: left;
-    background-color: aqua;
+    /*background-color: aqua;*/
     width: 500px;
     position: relative;
 }

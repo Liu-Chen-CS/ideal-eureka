@@ -1,7 +1,7 @@
 import {TextField} from "@mui/material";
 
 interface Props {
-    name: string;
+    name?: string;
     disabled?: boolean;
 }
 
@@ -9,8 +9,6 @@ const MaterialMultilineInputWrapper: React.FC<Props> = ({name, disabled}) => {
     const customStyles = {
         "& .MuiOutlinedInput-root": {
             fontSize: "18px",
-            // height: "48px",
-            width: "600px",
             fontFamily: "EONBrixSans, Arial, Geneva, Helvetica, sans-serif",
             borderRadius: "8px",
             background: disabled ? "#f0f0f0" : "#ffffff",
@@ -37,6 +35,7 @@ const MaterialMultilineInputWrapper: React.FC<Props> = ({name, disabled}) => {
     return (
         <div className="materialMultilineInputWrapper-container">
             <TextField
+                fullWidth
                 id="outlined-multiline-static"
                 label="Multiline"
                 multiline
