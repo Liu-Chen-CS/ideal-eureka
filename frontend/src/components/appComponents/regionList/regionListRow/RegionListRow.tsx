@@ -8,6 +8,7 @@ import ConfirmModal from "../../../customUiElements/confirmBackModal/confirmBack
 import {useDeleteRegion, useGetRegionById} from "../../../../hooks/hooks";
 import MaterialUIDropdownMenuWrapper
     from "../../../customUiElements/materialUiWrapper/materialUiDropdownMenuWrapper/materialUiDropdownMenuWrapper";
+import FileDownloadOutlinedIcon from '@mui/icons-material/FileDownloadOutlined';
 
 interface Props {
     regionId: number;
@@ -36,7 +37,7 @@ const RegionListRow: React.FC<Props> = (
 ) => {
 
     const [showOptions, setShowOptions] = useState(false);
-    const { t } = useTranslation();
+    const {t} = useTranslation();
     const [deleteModalOpen, setDeleteModalOpen] = useState(false);
     const navigate = useNavigate();
 
@@ -109,9 +110,13 @@ const RegionListRow: React.FC<Props> = (
             <td className="region-list-row-item">{division}</td>
             <td className="region-list-row-item">{createdOn}</td>
             {
-                isDeutschlandweit ? (<td className="download-container" onClick={() => {
-                    downloadCSV();
-                }}><img src={DownloadIcon}/></td>) : (
+                isDeutschlandweit ? (
+                    <td className="download-container">
+                        <FileDownloadOutlinedIcon
+                            sx={{"&:hover": {cursor: "pointer",}}}
+                            onClick={downloadCSV}
+                        />
+                    </td>) : (
                     <td
                         className="bonus-list-row-edit"
                     >

@@ -162,10 +162,10 @@ const ListDetails: React.FC<Props> = ({
                     {
                         values.mode === "create" && (
                             <MaterialButtonWrapper
-                                variant="outlined"
+                                variant="contained"
                                 onClick={handleDeleteList}
                                 label={t("deleteList")}
-                                // style={{marginTop: "10px"}}
+                                type={"button"}
                             />
                         )
                     }

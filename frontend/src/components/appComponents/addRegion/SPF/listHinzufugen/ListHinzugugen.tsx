@@ -51,7 +51,8 @@ const ListHinzugugen: React.FC<Props> = ({prefixName, regionId, createList, isFi
                 name={`${prefixName}.listName`}
                 label={t("enterListName")}
             />
-            <MaterialMultilineInputWrapper name={`${prefixName}.listDetails`}/>
+            {/*<MaterialMultilineInputWrapper name={`${prefixName}.listDetails`}/>*/}
+            <MaterialMultilineInputWrapper name={`listHinzufugen.listDetails`}/>
           </div>
           {mode === "create" ? (
               <div className="list-right">

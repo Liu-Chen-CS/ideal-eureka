@@ -31,15 +31,6 @@
     z-index: 9999;
 }
 
-.download-container img{
-    height: 25px;
-    width: 200%;
-}
-
-.download-container img:hover{
-    cursor: pointer;
-}
-
 .modal-overlay {
     position: fixed;
     top: 0;

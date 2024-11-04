@@ -290,15 +290,16 @@ const FileUploader: React.FC<Props> = ({createList, isFileLoading, handleFileLoa
                     {(isSucceedUpload) ? (
                         <MaterialButtonWrapper
                             onClick={handleCreateList}
-                            // style={{position: "absolute", right: 0}}
                             variant="contained"
                             label={t("validateList")}
+                            type={"button"}
                         />
                     ) : (
                         <MaterialButtonWrapper
                             variant="contained"
                             label={t("selectFile")}
                             onClick={handleFileUploadClick}
+                            type={"button"}
                         />)}
 
                 </div>

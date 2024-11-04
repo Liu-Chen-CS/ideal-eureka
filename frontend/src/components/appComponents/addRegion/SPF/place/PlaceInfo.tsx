@@ -196,6 +196,7 @@ const PlaceInfo: React.FC<Props> = ({places, searchTerm, toListDetails, uniqueId
                                                                 }}
                                                                 label={t("correct")}
                                                                 variant="outlined"
+                                                                type={"button"}
                                                             />
                                                         </div>
                                                     )

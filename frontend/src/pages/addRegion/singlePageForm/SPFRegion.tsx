@@ -248,11 +248,15 @@ const SPFRegion: React.FC<SPFRegionProps> = (
                                         variant="outlined"
                                         onClick={(): void => confirmBack()}
                                         label={t("goBack")}
+                                        size={"large"}
+                                        type={"button"}
                                     />
                                     <MaterialButtonWrapper
                                         variant="contained"
                                         onClick={checkDataMissing}
                                         label={t("buttonSave")}
+                                        size={"large"}
+                                        type={"submit"}
                                     />
                                 </div>
                                 <pre>{JSON.stringify(formik, null, 2)}</pre>

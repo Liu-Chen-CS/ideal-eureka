@@ -19,6 +19,13 @@
     align-items: center;
 }
 
+.add-region-headline-left h1{
+    color: #EA1B0A;
+    margin-top: -5px;
+    padding: 0;
+
+}
+
 .add-region-headline-right{
     display: flex;
     align-items: center;

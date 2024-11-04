@@ -4,6 +4,7 @@ interface Props {
     variant: "contained" | "outlined",
     onClick: () => void;
     label: string;
+    type: "button" | "submit" | "reset";
     size?: "small" | "medium" | "large";
     startIcon?: React.ReactNode;
     endIcon?: React.ReactNode;
@@ -16,6 +17,7 @@ const MaterialButtonWrapper: React.FC<Props> = ({
                                                     size,
                                                     startIcon,
                                                     endIcon,
+                                                    type,
                                                 }) => {
     const customizedColor = {
         ...(variant === "contained" && {
@@ -24,6 +26,7 @@ const MaterialButtonWrapper: React.FC<Props> = ({
             border: "none",
             '&:hover': {
                 backgroundColor: "darkred",
+                boxShadow: "none",
             },
         }),
         ...(variant === "outlined" && {
@@ -33,6 +36,7 @@ const MaterialButtonWrapper: React.FC<Props> = ({
             '&:hover': {
                 backgroundColor: "rgba(234, 27, 10, 0.1)",
                 border: "1px solid #EA1B0A",
+                boxShadow: "none",
             },
         }),
         borderRadius: "10px",
@@ -48,6 +52,9 @@ const MaterialButtonWrapper: React.FC<Props> = ({
                 onClick={onClick}
                 size={size}
                 sx={customizedColor}
+                startIcon={startIcon && startIcon}
+                endIcon={endIcon && endIcon}
+                type={type}
             >
                 {label}
             </Button>
