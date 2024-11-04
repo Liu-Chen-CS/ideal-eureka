@@ -25,12 +25,15 @@
 
 .confirm-modal-download-buttons .download-container {
   position: relative;
+  /*background-color: aqua;*/
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
 }
 
-.download-container span {
+.download-container .download-info {
   position: absolute;
   top: -20px;
-  left: 8%;
   font-weight: bold;
 }
 
@@ -38,6 +41,10 @@
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+.confirm-modal-correct-buttons .correct-container ul li .material-button-wrapper-container{
+  margin-top: 4px;
 }
 
 .correct-container ul{
@@ -68,7 +75,25 @@
   margin-bottom: 20px;
 }
 
+.correct-container ul li:last-child .box{
+  margin: 0;
+}
+
 .correct-container ul .box:hover{
   border: 3px solid #1EA2B1;
   cursor: pointer;
+}
+
+.confirm-modal-buttons{
+  /*background-color: aqua;*/
+  display:flex;
+  justify-content: flex-end;
+  align-items: center;
+  column-gap:10px;
+}
+
+.confirm-modal-correct-buttons{
+  display:flex;
+  flex-direction: column;
+  row-gap: 10px;
 }

@@ -3,9 +3,9 @@ import "./regionSorting.css";
 import {useRef, useState} from "react";
 import Arrow from "../../../../assets/arrow.svg";
 import SortingIcon from "../../../../assets/sortingIcon.svg";
-import {EonUiButton, EonUiText} from "@eon-ui/eon-ui-components-react";
 import MaterialButtonWrapper
     from "../../../customUiElements/materialUiWrapper/materialButtonWrapper/MaterialButtonWrapper";
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 interface Props {
     [key: string]: any;
@@ -132,6 +132,8 @@ const RegionSorting: React.FC<Props> = (props: Props) => {
                     onClick={handleResetSortingClick}
                     variant="contained"
                     size="medium"
+                    startIcon={<ArrowBackIcon/>}
+                    type={"button"}
                 />
             </div>
         </div>

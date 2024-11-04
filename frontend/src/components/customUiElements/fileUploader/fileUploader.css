@@ -121,12 +121,10 @@
   height: 40%;
   position:relative;
   display: flex;
+  justify-content: flex-end;
   align-items: center;
   box-sizing: border-box;
-}
-
-.wrapper .upload-wrapper .eonui-primary{
-  cursor: not-allowed;
+  /*background-color: aqua;*/
 }
 
 .wrapper .upload-wrapper .warning-msg{

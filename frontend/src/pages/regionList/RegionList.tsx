@@ -11,11 +11,11 @@ import {useNavigate} from "react-router-dom";
 import {useTranslation} from "react-i18next";
 import LoadingSpinner from "../../components/customUiElements/LoadingSpinner/LoadingSpinner";
 import {RegionDivisionVO} from "../../api/region/models";
-import {Button, IconButton, InputAdornment, OutlinedInput, TextField} from "@mui/material";
+import { InputAdornment, TextField} from "@mui/material";
 import MaterialButtonWrapper
     from "../../components/customUiElements/materialUiWrapper/materialButtonWrapper/MaterialButtonWrapper";
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
-import SaveIcon from "@mui/icons-material/Save";
+import AddIcon from '@mui/icons-material/Add';
 
 const RegionList: React.FC = () => {
     const navigate = useNavigate();
@@ -296,6 +296,9 @@ const RegionList: React.FC = () => {
                         variant="contained"
                         label={t("addNewRegion")}
                         onClick={(): void => navigate("/regions/new")}
+                        size="large"
+                        startIcon={<AddIcon/>}
+                        type={"button"}
                     />
                 </div>
             </div>

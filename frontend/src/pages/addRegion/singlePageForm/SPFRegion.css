@@ -1,9 +1,15 @@
 .SPF-region-container{
-
+    /*background-color:aqua;*/
 }
 
 .single-page-form-button-row{
     display: flex;
     align-items: center;
     margin: 20px 0;
+}
+
+.single-page-form-button-row{
+    /*background-color: orange;*/
+    display: flex;
+    column-gap: 10px;
 }

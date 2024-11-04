@@ -16,7 +16,7 @@
 .region-list-list {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    /*align-items: center;*/
     /*background-color: aqua;*/
 }
 
@@ -59,6 +59,7 @@
     border-spacing: 30px 10px;
     width: 1101px;
     display: flex;
+    margin-bottom: 20px;
 }
 
 .region-list-table .loading-icon-region-list {
@@ -70,7 +71,6 @@
     font-size: 18px;
     letter-spacing: 0.03rem;
     text-align: left;
-    /*background-color: aqua;*/
     width: 500px;
     position: relative;
 }

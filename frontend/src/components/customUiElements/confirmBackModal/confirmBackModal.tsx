@@ -100,6 +100,7 @@ const ConfirmModal: React.FC<Props> = ({
                                         label={t("download")}
                                         variant="outlined"
                                         onClick={() => regionalCustomization?.downloadTheme && downloadDuplicateFile(regionalCustomization?.downloadTheme.content)}
+                                        type={"button"}
                                     />
                                 </div>
                             ) : (
@@ -119,6 +120,8 @@ const ConfirmModal: React.FC<Props> = ({
                                                                 label={t("replace")}
                                                                 onClick={() => regionalCustomization.correctTheme?.toPlaceInfo(placeName)}
                                                                 variant="outlined"
+                                                                size={"large"}
+                                                                type={"button"}
                                                             />
                                                         </div>
                                                     </li>
@@ -131,6 +134,8 @@ const ConfirmModal: React.FC<Props> = ({
                                 label={t("cancel")}
                                 variant="outlined"
                                 onClick={handleClose}
+                                size={"medium"}
+                                type={"button"}
                             />
                         )
                     }
@@ -138,6 +143,8 @@ const ConfirmModal: React.FC<Props> = ({
                         label={confirmButtonText}
                         onClick={() => confirmationFunction()}
                         variant="contained"
+                        size={"medium"}
+                        type={"button"}
                     />
                 </div>
             </Modal>

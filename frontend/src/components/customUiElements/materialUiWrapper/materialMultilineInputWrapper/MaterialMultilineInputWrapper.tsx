@@ -1,11 +1,17 @@
 import {TextField} from "@mui/material";
+import {useField} from "formik";
+import {useTranslation} from "react-i18next";
 
 interface Props {
-    name?: string;
+    name: string;
     disabled?: boolean;
 }
 
-const MaterialMultilineInputWrapper: React.FC<Props> = ({name, disabled}) => {
+const MaterialMultilineInputWrapper: React.FC<Props> = ({disabled, name}) => {
+    const {t} = useTranslation();
+
+    const [field] = useField(name);
+
     const customStyles = {
         "& .MuiOutlinedInput-root": {
             fontSize: "18px",
@@ -35,9 +41,10 @@ const MaterialMultilineInputWrapper: React.FC<Props> = ({name, disabled}) => {
     return (
         <div className="materialMultilineInputWrapper-container">
             <TextField
+                {...field}
                 fullWidth
                 id="outlined-multiline-static"
-                label="Multiline"
+                label={t("enterDescription")}
                 multiline
                 rows={4}
                 defaultValue="Default Value"
