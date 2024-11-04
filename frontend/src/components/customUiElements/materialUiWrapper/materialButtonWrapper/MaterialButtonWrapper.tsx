@@ -8,6 +8,7 @@ interface Props {
     size?: "small" | "medium" | "large";
     startIcon?: React.ReactNode;
     endIcon?: React.ReactNode;
+    disabled?: boolean;
 }
 
 const MaterialButtonWrapper: React.FC<Props> = ({
@@ -18,6 +19,7 @@ const MaterialButtonWrapper: React.FC<Props> = ({
                                                     startIcon,
                                                     endIcon,
                                                     type,
+                                                    disabled,
                                                 }) => {
     const customizedColor = {
         ...(variant === "contained" && {
@@ -55,6 +57,7 @@ const MaterialButtonWrapper: React.FC<Props> = ({
                 startIcon={startIcon && startIcon}
                 endIcon={endIcon && endIcon}
                 type={type}
+                disabled={disabled}
             >
                 {label}
             </Button>

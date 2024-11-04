@@ -300,6 +300,7 @@ const FileUploader: React.FC<Props> = ({createList, isFileLoading, handleFileLoa
                             label={t("selectFile")}
                             onClick={handleFileUploadClick}
                             type={"button"}
+                            disabled={errorType === "invalidFormat" && true}
                         />)}
 
                 </div>
