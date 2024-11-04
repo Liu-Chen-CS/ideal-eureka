@@ -293,6 +293,7 @@ const FileUploader: React.FC<Props> = ({createList, isFileLoading, handleFileLoa
                             variant="contained"
                             label={t("validateList")}
                             type={"button"}
+                            disabled={(errorType === "notValidated" && meta.touched) && true}
                         />
                     ) : (
                         <MaterialButtonWrapper
@@ -300,9 +301,8 @@ const FileUploader: React.FC<Props> = ({createList, isFileLoading, handleFileLoa
                             label={t("selectFile")}
                             onClick={handleFileUploadClick}
                             type={"button"}
-                            disabled={errorType === "invalidFormat" && true}
+                            disabled={(errorType === "invalidFormat") && true}
                         />)}
-
                 </div>
                 {showModal && (
                     <ConfirmModal

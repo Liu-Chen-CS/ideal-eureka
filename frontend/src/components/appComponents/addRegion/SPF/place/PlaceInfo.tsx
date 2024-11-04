@@ -11,7 +11,7 @@ interface Props {
     places: Place[] | null;
     searchTerm?: string;
     toListDetails: (placeList: Place[]) => void;
-    uniqueId:number;
+    uniqueId: number;
 }
 
 const PlaceInfo: React.FC<Props> = ({places, searchTerm, toListDetails, uniqueId}) => {
@@ -183,9 +183,10 @@ const PlaceInfo: React.FC<Props> = ({places, searchTerm, toListDetails, uniqueId
                                                 <span className="box box1">{postcode}</span>
                                                 <span className={`box box2 ${!isValid && "notValid"}`}>
                                                     {placeName}
-                                                    {!isValid && <span className="error-msg">
-                                                        {t("correctLocation")}
-                                                    </span>}
+                                                    {!isValid && (
+                                                        <span className="error-msg">
+                                                            {t("correctLocation")}
+                                                        </span>)}
                                                 </span>
                                                 {
                                                     !isValid && (

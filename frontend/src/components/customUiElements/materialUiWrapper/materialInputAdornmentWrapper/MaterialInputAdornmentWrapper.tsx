@@ -5,6 +5,7 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import {useState} from "react";
 import SaveOutlinedIcon from '@mui/icons-material/SaveOutlined';
 import SaveIcon from '@mui/icons-material/Save';
+import {useTranslation} from "react-i18next";
 
 interface Props {
     type: string;
@@ -15,6 +16,7 @@ interface Props {
 }
 
 const MaterialInputAdornmentWrapper: React.FC<Props> = ({type, name, label, onIconClick, disabled}) => {
+    const {t} = useTranslation();
     const customStyles = {
         "& .MuiOutlinedInput-root": {
             fontSize: "18px",
@@ -48,7 +50,7 @@ const MaterialInputAdornmentWrapper: React.FC<Props> = ({type, name, label, onIc
             <TextField
                 fullWidth
                 {...field}
-                label="With normal TextField"
+                label={t(label)}
                 id="outlined-start-adornment"
                 InputProps={{
                     endAdornment: <InputAdornment position="end"><SaveIcon/></InputAdornment>,

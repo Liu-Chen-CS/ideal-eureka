@@ -14,7 +14,8 @@ interface Props {
     confirmationFunction: (...args: any[]) => void;
     regionalCustomization?: {
         downloadTheme: { content: string | null, msg: string, switchOffModal: () => void } | null;
-        correctTheme: { data: Place[] | null, toPlaceInfo: (placeName:string) => void } | null;
+        correctTheme: { data: Place[] | null, toPlaceInfo: (placeName: string) => void } | null;
+        demoNotice?: { data: string[] }
     }
 }
 
@@ -40,9 +41,7 @@ const ConfirmModal: React.FC<Props> = ({
         },
     };
 
-    const handleClose = () => {
-        closeModal();
-    };
+    const handleClose = (): void => closeModal();
 
     const downloadDuplicateFile = useCallback((duplicateFileContent: string | null) => {
         if (duplicateFileContent) {
@@ -89,6 +88,12 @@ const ConfirmModal: React.FC<Props> = ({
             >
                 <p className="confirm-modal-heading">{heading}</p>
                 <p className="confirm-modal-sub-heading">{subHeading}</p>
+                {regionalCustomization?.demoNotice && (
+                    <div>
+                        <p className="confirm-modal-heading">{regionalCustomization?.demoNotice.data[0]}</p>
+                        <p>{regionalCustomization?.demoNotice.data[1]}</p>
+                    </div>
+                )}
                 <div
                     className={`${regionalCustomization ? (regionalCustomization.downloadTheme ? ("confirm-modal-download-buttons") : ("confirm-modal-correct-buttons")) : ("confirm-modal-buttons")}`}>
                     {
@@ -141,7 +146,7 @@ const ConfirmModal: React.FC<Props> = ({
                     }
                     <MaterialButtonWrapper
                         label={confirmButtonText}
-                        onClick={() => confirmationFunction()}
+                        onClick={confirmationFunction}
                         variant="contained"
                         size={"medium"}
                         type={"button"}
