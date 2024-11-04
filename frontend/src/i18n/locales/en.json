@@ -150,5 +150,6 @@
   "correct": "Correct",
   "optionsInSystem": "There are the following options in the system:",
   "ignore": "Ignore",
-  "replace":"Replace"
+  "replace":"Replace",
+  "consent": "Consent"
 }

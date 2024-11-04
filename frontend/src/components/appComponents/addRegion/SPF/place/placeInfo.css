@@ -85,8 +85,9 @@
 
 .place-info-container ol li .error-msg{
     position:absolute;
-    top:54px;
-    left:-7px;
+    top:57px;
+    left:5px;
+    color: #B00402;
 }
 
 .place-info-container ol li .correct-container{

@@ -144,5 +144,6 @@
   "listNotUploaded": "Es wurde noch keine Liste hochgeladen",
   "listNotValidated": "Es wurde noch keine Liste validiert",
   "incorrectInputFields": "Fehlerhafte Eingabefelder",
-  "checkInputFields": "Bitte überprüfen Sie die Eingabefelder in Ihren Listen"
+  "checkInputFields": "Bitte überprüfen Sie die Eingabefelder in Ihren Listen",
+  "consent": "Zustimmung"
 }

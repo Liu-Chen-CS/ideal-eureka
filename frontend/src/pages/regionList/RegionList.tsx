@@ -2,7 +2,7 @@ import "./regionList.css";
 import PlusIcon from "../../assets/plus.svg";
 import HoverButton from "../../components/customUiElements/hoverButton/hoverButton";
 import RegionSorting from "../../components/appComponents/regionList/sorting/regionSorting";
-import {useCallback, useEffect, useMemo, useState} from "react";
+import React, {useCallback, useEffect, useMemo, useState} from "react";
 import RegionListRow from "../../components/appComponents/regionList/regionListRow/RegionListRow";
 import {useGetAllRegions} from "../../hooks/hooks";
 import qs from "qs";
@@ -11,11 +11,13 @@ import {useNavigate} from "react-router-dom";
 import {useTranslation} from "react-i18next";
 import LoadingSpinner from "../../components/customUiElements/LoadingSpinner/LoadingSpinner";
 import {RegionDivisionVO} from "../../api/region/models";
-import { InputAdornment, TextField} from "@mui/material";
+import {InputAdornment, TextField} from "@mui/material";
 import MaterialButtonWrapper
     from "../../components/customUiElements/materialUiWrapper/materialButtonWrapper/MaterialButtonWrapper";
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import AddIcon from '@mui/icons-material/Add';
+import ConfirmModal from "../../components/customUiElements/confirmBackModal/confirmBackModal";
+import {useModal} from "../../hooks/ModalContext";
 
 const RegionList: React.FC = () => {
     const navigate = useNavigate();
@@ -25,13 +27,14 @@ const RegionList: React.FC = () => {
     const [showDeutschlandweit, setShowDeutschlandweit] = useState<boolean>(true);
     const [sortBy, setSortBy] = useState<"regionDistribution" | "listName" | "customer" | "createdOn" | "division">("createdOn");
     const [sortingAlgo, setSortingAlgo] = useState<"az" | "za">("az");
+    const [demoNoticeText, setDemoNoticeText] = useState<string[]>(["Disclaimer", "This is a personal demo project and any similarity to the company page you work for is purely coincidental."]);
     const [selectedSortingOptions, setSelectedSortingOptions] = useState<RegionSoringOptions>({
         customer: [],
         division: [],
         distribution: [],
         searchTerm: [],
     });
-
+    const {isModalVisible, closeModal} = useModal();
     const resetSorting = useCallback(() => {
         setSelectedSortingOptions({
             customer: [],
@@ -41,9 +44,7 @@ const RegionList: React.FC = () => {
         })
     }, []);
 
-    const handleAddRegionClick = useCallback((): void => {
-        navigate("/regions/new");
-    }, []);
+    const handleAddRegionClick = useCallback((): void => navigate("/regions/new"), []);
 
     const handleSortingOptionsChange = useCallback((key: string, value: string): void => {
         if (key === "searchTerm") {
@@ -184,6 +185,21 @@ const RegionList: React.FC = () => {
 
     return (
         <div className="region-list-container">
+            {isModalVisible && (
+                <ConfirmModal
+                    closeModal={closeModal}
+                    confirmationFunction={closeModal}
+                    heading={demoNoticeText[0]}
+                    subHeading={demoNoticeText[1]}
+                    confirmButtonText={t("consent")}
+                    regionalCustomization={{
+                        downloadTheme: null,
+                        correctTheme: null,
+                        demoNotice: {
+                            data: ["Haftungsausschluss", "Dies ist ein persönliches Demoprojekt und jegliche Ähnlichkeit mit der Unternehmensseite, für die Sie arbeiten, ist rein zufällig."]
+                        }
+                    }}
+                />)}
             <HoverButton
                 iconPath={PlusIcon}
                 label="addNewRegion"
@@ -202,6 +218,9 @@ const RegionList: React.FC = () => {
                 <div className="region-list-list">
                     <TextField
                         label={t("search")}
+                        onChange={(event) => {
+                            handleSortingOptionsChange("searchTerm", event.target.value)
+                        }}
                         InputProps={{
                             endAdornment: <InputAdornment position="end"><SearchOutlinedIcon/></InputAdornment>,
                         }}

@@ -43,7 +43,7 @@ const RegionDivision: React.FC<Props> = ({ prefixName, options }) => {
           <MaterialInputAdornmentWrapper
               type="text"
               name={`${prefixName}.newRegionDivision`}
-              label={t("addNewRegionDivisionLabel")}
+              label={"addNewRegionDivisionLabel"}
               // onIconClick={handleAddNewOption}
           />
           <MaterialUiSelectWrapper
