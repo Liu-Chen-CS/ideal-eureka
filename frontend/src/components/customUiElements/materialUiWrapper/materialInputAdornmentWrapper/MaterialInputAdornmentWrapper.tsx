@@ -1,4 +1,4 @@
-import {useField} from "formik";
+import {useField, useFormikContext} from "formik";
 import {FormControl, IconButton, InputAdornment, InputLabel, OutlinedInput, TextField} from "@mui/material";
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
@@ -6,6 +6,7 @@ import {useState} from "react";
 import SaveOutlinedIcon from '@mui/icons-material/SaveOutlined';
 import SaveIcon from '@mui/icons-material/Save';
 import {useTranslation} from "react-i18next";
+import {RegionForm} from "../../../../forms/addRegion/regionFormConfig";
 
 interface Props {
     type: string;
@@ -16,6 +17,7 @@ interface Props {
 }
 
 const MaterialInputAdornmentWrapper: React.FC<Props> = ({type, name, label, onIconClick, disabled}) => {
+    const {values, setFieldValue} = useFormikContext<RegionForm>();
     const {t} = useTranslation();
     const customStyles = {
         "& .MuiOutlinedInput-root": {
@@ -53,7 +55,12 @@ const MaterialInputAdornmentWrapper: React.FC<Props> = ({type, name, label, onIc
                 label={t(label)}
                 id="outlined-start-adornment"
                 InputProps={{
-                    endAdornment: <InputAdornment position="end"><SaveIcon/></InputAdornment>,
+                    endAdornment: <InputAdornment position="end"
+                                                  sx={{
+                                                      '&:hover': {cursor: "pointer"}
+                                                  }}
+                                                  onClick={onIconClick}
+                    ><SaveIcon/></InputAdornment>,
                 }}
                 sx={customStyles}
             />

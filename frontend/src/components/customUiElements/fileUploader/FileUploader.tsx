@@ -10,6 +10,8 @@ import ConfirmModal from "../confirmBackModal/confirmBackModal";
 import upload from "../../../assets/upload.svg";
 import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 import MaterialButtonWrapper from "../materialUiWrapper/materialButtonWrapper/MaterialButtonWrapper";
+import RuleFolderOutlinedIcon from '@mui/icons-material/RuleFolderOutlined';
+import DriveFolderUploadOutlinedIcon from '@mui/icons-material/DriveFolderUploadOutlined';
 
 interface Props {
     createList: (list: List) => void,
@@ -190,9 +192,7 @@ const FileUploader: React.FC<Props> = ({createList, isFileLoading, handleFileLoa
                     }
                 }
             };
-
             reader.readAsText(file);
-
         } else {
             console.log("emptyFile")
             setFieldTouched("list", true, true);
@@ -294,6 +294,7 @@ const FileUploader: React.FC<Props> = ({createList, isFileLoading, handleFileLoa
                             label={t("validateList")}
                             type={"button"}
                             disabled={(errorType === "notValidated" && meta.touched) && true}
+                            startIcon={<RuleFolderOutlinedIcon/>}
                         />
                     ) : (
                         <MaterialButtonWrapper
@@ -302,6 +303,7 @@ const FileUploader: React.FC<Props> = ({createList, isFileLoading, handleFileLoa
                             onClick={handleFileUploadClick}
                             type={"button"}
                             disabled={(errorType === "invalidFormat") && true}
+                            startIcon={<DriveFolderUploadOutlinedIcon/>}
                         />)}
                 </div>
                 {showModal && (

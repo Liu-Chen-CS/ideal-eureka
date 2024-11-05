@@ -1,4 +1,5 @@
-import {EonUiButton} from "@eon-ui/eon-ui-components-react";
+import PublishedWithChangesOutlinedIcon from '@mui/icons-material/PublishedWithChangesOutlined';
+import NotificationImportantOutlinedIcon from '@mui/icons-material/NotificationImportantOutlined';
 import {useTranslation} from "react-i18next";
 import Modal from "react-modal";
 import "./confirmBackModal.css";
@@ -127,6 +128,7 @@ const ConfirmModal: React.FC<Props> = ({
                                                                 variant="outlined"
                                                                 size={"large"}
                                                                 type={"button"}
+                                                                startIcon={<PublishedWithChangesOutlinedIcon/>}
                                                             />
                                                         </div>
                                                     </li>

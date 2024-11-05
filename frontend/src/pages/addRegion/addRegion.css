@@ -20,7 +20,7 @@
 }
 
 .add-region-headline-left h1{
-    color: #EA1B0A;
+    color: var(--siemens-third);
     margin-top: -5px;
     padding: 0;
 
@@ -29,13 +29,6 @@
 .add-region-headline-right{
     display: flex;
     align-items: center;
-}
-
-.add-region-back-icon{
-    cursor: pointer;
-    width: 25px;
-    height: 25px;
-    margin-right: 20px;
 }
 
 .add-bonus-form{
