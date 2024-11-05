@@ -47,7 +47,6 @@ const MaterialMultilineInputWrapper: React.FC<Props> = ({disabled, name}) => {
                 label={t("enterDescription")}
                 multiline
                 rows={4}
-                defaultValue="Default Value"
                 sx={customStyles}
             />
         </div>

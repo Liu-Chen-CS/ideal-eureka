@@ -23,21 +23,26 @@ const MaterialButtonWrapper: React.FC<Props> = ({
                                                 }) => {
     const customizedColor = {
         ...(variant === "contained" && {
-            backgroundColor: "#EA1B0A",
-            color: "white",
+            backgroundColor: "var(--siemens-third)",
+            color: "black",
             border: "none",
+            fontWeight: "bold",
+            fontSize: "90px",
+            letterSpacing: "2px",
             '&:hover': {
-                backgroundColor: "darkred",
+                backgroundColor: "var(--siemens-secondary)",
                 boxShadow: "none",
             },
         }),
         ...(variant === "outlined" && {
             backgroundColor: "transparent",
-            color: "#EA1B0A",
-            border: "1px solid #EA1B0A",
+            color: "black",
+            border: "3px solid var(--siemens-third)",
+            fontWeight: "bold",
+            letterSpacing: "2px",
             '&:hover': {
-                backgroundColor: "rgba(234, 27, 10, 0.1)",
-                border: "1px solid #EA1B0A",
+                backgroundColor: "var(--siemens-secondary)",
+                border: "3px solid var(--siemens-secondary)",
                 boxShadow: "none",
             },
         }),

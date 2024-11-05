@@ -145,5 +145,6 @@
   "listNotValidated": "Es wurde noch keine Liste validiert",
   "incorrectInputFields": "Fehlerhafte Eingabefelder",
   "checkInputFields": "Bitte überprüfen Sie die Eingabefelder in Ihren Listen",
-  "consent": "Zustimmung"
+  "consent": "Zustimmung",
+  "optionsInSystem": "Im System gibt es folgende Möglichkeiten:"
 }

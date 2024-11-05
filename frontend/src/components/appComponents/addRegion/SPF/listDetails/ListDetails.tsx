@@ -10,6 +10,7 @@ import MaterialUiAccordionWrapper
     from "../../../../customUiElements/materialUiWrapper/materialUiAccordionWrapper/materialUiAccordionWrapper";
 import MaterialButtonWrapper
     from "../../../../customUiElements/materialUiWrapper/materialButtonWrapper/MaterialButtonWrapper";
+import DeleteForeverOutlinedIcon from '@mui/icons-material/DeleteForeverOutlined';
 
 interface Props {
     indexNum: number;
@@ -166,12 +167,14 @@ const ListDetails: React.FC<Props> = ({
                                 onClick={handleDeleteList}
                                 label={t("deleteList")}
                                 type={"button"}
+                                startIcon={<DeleteForeverOutlinedIcon/>}
                             />
                         )
                     }
                 </div>
             </div>
-            {<PlaceInfo places={placeListWithSymboleId} searchTerm={searchTerm} toListDetails={toListDetails} uniqueId={uniqueId}/>}
+            {<PlaceInfo places={placeListWithSymboleId} searchTerm={searchTerm} toListDetails={toListDetails}
+                        uniqueId={uniqueId}/>}
         </MaterialUiAccordionWrapper>
     );
 };

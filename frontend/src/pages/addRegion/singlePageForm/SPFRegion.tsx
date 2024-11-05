@@ -17,6 +17,8 @@ import {useNewRegion} from "../../../hooks/hooks";
 import ListDetails from "../../../components/appComponents/addRegion/SPF/listDetails/ListDetails";
 import MaterialButtonWrapper
     from "../../../components/customUiElements/materialUiWrapper/materialButtonWrapper/MaterialButtonWrapper";
+import ArrowBackOutlinedIcon from '@mui/icons-material/ArrowBackOutlined';
+import SaveOutlinedIcon from '@mui/icons-material/SaveOutlined';
 
 interface SPFRegionProps {
     confirmBack: () => void;
@@ -251,6 +253,7 @@ const SPFRegion: React.FC<SPFRegionProps> = (
                                         label={t("goBack")}
                                         size={"large"}
                                         type={"button"}
+                                        startIcon={<ArrowBackOutlinedIcon/>}
                                     />
                                     <MaterialButtonWrapper
                                         variant="contained"
@@ -258,9 +261,10 @@ const SPFRegion: React.FC<SPFRegionProps> = (
                                         label={t("buttonSave")}
                                         size={"large"}
                                         type={"submit"}
+                                        startIcon={<SaveOutlinedIcon/>}
                                     />
                                 </div>
-                                <pre>{JSON.stringify(formik, null, 2)}</pre>
+                                {/*<pre>{JSON.stringify(formik, null, 2)}</pre>*/}
                             </Form>
                         </>
                     );

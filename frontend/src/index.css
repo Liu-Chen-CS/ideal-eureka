@@ -16,6 +16,15 @@
   --eon-lightgrey: #e8e8e8;
 }
 
+:root {
+  --siemens-primary: #000028;
+  --siemens-secondary: #00FFB9;
+  --siemens-third: #00CCCC;
+  --eon-ultralightgrey: #f6f6f7;
+  --background: #fafafa;
+  --eon-lightgrey: #e8e8e8;
+}
+
 * {
   margin: 0;
   padding: 0;

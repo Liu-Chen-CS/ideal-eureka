@@ -3,7 +3,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import USAFlag from "../../../assets/usaFlag.svg";
 import GermanFlag from "../../../assets/germanFlag.svg";
 import ProfileIcon from "../../../assets/profileIcon.svg";
-import Logo from "../../../assets/logo.svg";
+import Logo from "../../../assets/siemens.png";
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
 
@@ -30,9 +30,7 @@ const Navbar = () => {
     <nav aria-label="Main Navigation" className="navbar" role="navigation">
       <div className="navbar-colors" aria-hidden="true">
         <span className="navbar-color"></span>
-
         <span className="navbar-color"></span>
-
         <span className="navbar-color"></span>
       </div>
 
@@ -42,7 +40,6 @@ const Navbar = () => {
             href="/"
             onClick={(e) => {
               e.preventDefault();
-
               navigate("/");
             }}
             className="navbar-bonus-plus"
@@ -111,8 +108,7 @@ const Navbar = () => {
           <img
             className="navbar-logo"
             src={Logo}
-            alt="E.ON Logo"
-            aria-label="E.ON Homepage"
+            alt="Siemens Logo"
             onClick={() => navigate("/")}
           />
         </div>

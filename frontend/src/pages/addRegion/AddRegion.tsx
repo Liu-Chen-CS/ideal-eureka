@@ -4,7 +4,7 @@ import {useCallback, useEffect, useMemo, useState} from "react";
 import {useTranslation} from "react-i18next";
 import {useLocation, useNavigate, useParams} from "react-router-dom";
 import ArrowLeft from "../../assets/leftArrow.svg";
-import {EonUiHeadline} from "@eon-ui/eon-ui-components-react";
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import SPFRegion from "./singlePageForm/SPFRegion";
 import {
     initialValuesRegionForm,
@@ -28,7 +28,7 @@ const AddRegion: React.FC<Props> = ({mode}) => {
 
     const [showModal, setShowModal] = useState<boolean>(false);
 
-    const getHeadline:string = useMemo((): string => {
+    const getHeadline: string = useMemo((): string => {
         if (mode === "create" || mode === "copy") {
             return "addNewRegion";
         } else {
@@ -95,12 +95,15 @@ const AddRegion: React.FC<Props> = ({mode}) => {
             )}
             <div className="add-region-headline">
                 <div className="add-region-headline-left">
-                    <img
-                        alt="backArrow"
-                        src={ArrowLeft}
-                        className="add-region-back-icon"
-                        onClick={(): void => {
-                            setShowModal(true);
+                    <ArrowBackIcon
+                        onClick={(): void => setShowModal(true)}
+                        sx={{
+                            fontSize: "40px",
+                            marginRight: "20px",
+                            color: "var(--siemens-third)",
+                            '&:hover': {
+                                cursor: "pointer",
+                            }
                         }}
                     />
                     <h1>{t(getHeadline)}</h1>
