@@ -26,4 +26,12 @@
  ![Static Badge](https://img.shields.io/badge/Made_with-SQLite-orange?logo=sqlite)
  ![Static Badge](https://img.shields.io/badge/Made_with-Express-orange?logo=express)
 
+### Run the project    
+ 1. Clone the mono repo
+ 2. use `yarn install`
+ 3. after the installation use `cd frontend` and `yarn start` for starting up the frontend
+ 4. in a second terminal use `cd middleware` 
+ 5. Make sure to populate the .env file in the middleware root folder
+ 6. use `npx prisma generate` and then `npx prisma migrate deploy` to setup the backend ORM and db
+ 7. use `yarn start` again for starting up the backend
  
