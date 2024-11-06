@@ -26,8 +26,4 @@
  ![Static Badge](https://img.shields.io/badge/Made_with-SQLite-orange?logo=sqlite)
  ![Static Badge](https://img.shields.io/badge/Made_with-Express-orange?logo=express)
 
-## Current Stack 
-
- - React 
-
- - Prisma
+ 
