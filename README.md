@@ -1,7 +1,4 @@
-# New Bonus+ Calculation Tool
-
-A redesign of the current Bonus+ Frontend
-
+# A Demo Project - unrelated to real work project
 
 
 ## Current Stack 
