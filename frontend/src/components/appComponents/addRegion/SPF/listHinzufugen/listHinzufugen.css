@@ -1,13 +1,73 @@
-.spf-list-data-inner{
+.spf-list-data-inner {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 10px;
     row-gap: 20px;
 }
 
-.list-left{
+.list-left {
     display: flex;
     flex-direction: column;
     width: 100%;
     gap: 25px;
+}
+
+.list-hinzufugen-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.list-hinzufugen-container .file-download-container {
+    position: absolute;
+    border-radius: 10px;
+    top: 25%;
+    right: -220px;
+    opacity: 0.4;
+    width: 200px;
+    height: 160px;
+    background-color: #F9F6F4;
+    box-sizing: border-box;
+    padding: 10px;
+    transition: 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2)
+}
+
+.list-hinzufugen-container .file-download-container:hover {
+    opacity: 1;
+    cursor: default;
+}
+
+.file-download-container .top {
+    /*background-color: green;*/
+    margin-bottom: 20px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.file-download-container .bottom {
+    /*background-color: orange;*/
+}
+
+.file-download-container .bottom ul {
+    margin: 0;
+    padding: 0;
+}
+
+.file-download-container .bottom ul li {
+    list-style: none;
+    margin-bottom: 10px;
+    /*background-color: blue;*/
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.file-download-container .bottom ul li:hover {
+    cursor: pointer;
+}
+
+.file-download-container .bottom ul li:hover span {
+    color: grey;
 }

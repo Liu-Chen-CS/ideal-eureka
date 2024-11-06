@@ -33,7 +33,6 @@ const FileUploader: React.FC<Props> = ({createList, isFileLoading, handleFileLoa
     const [isDragOver, setIsDragOver] = useState<boolean>(false);
     const [fileName, setFileName] = useState<string | null>(null);
     const [fileSize, setFileSize] = useState<string | null>(null);
-    const [showCancelButton, setShowCancelButton] = useState<boolean>(true);
     const [isSucceedUpload, setIsSucceedUpload] = useState<boolean>(false);
     const {setFieldValue, setFieldTouched, errors, values} = useFormikContext<RegionForm>();
     const [errorType, setErrorType] = useState<"notValidated" | "invalidFormat" | "isDuplicate" | "">("");
@@ -58,24 +57,19 @@ const FileUploader: React.FC<Props> = ({createList, isFileLoading, handleFileLoa
     const isSubset = (subset: Set<string>, superset: Set<string>) => {
         return Array.from(subset).every((item) => superset.has(item));
     }
-
     const handleFileUploadClick = () => {
         if (inputFileRef.current) {
             inputFileRef.current.click();
         }
     };
-
     const [showModal, setShowModal] = useState<boolean>(false);
-
     const [modalTexts, setModalTexts] = useState(["", ""]);
-
     const handleCreateList = () => {
         setIsSucceedUpload(false);
         setErrorType("");
         handleFileLoading();
         setFieldValue("listHinzufugen.listName", "");
         setFieldValue("listHinzufugen.listDetails", "");
-
         const list: List = {
             id: Date.now(),
             placeList: placeList,
@@ -86,40 +80,29 @@ const FileUploader: React.FC<Props> = ({createList, isFileLoading, handleFileLoa
         }
         createList(list);
     }
-
     const handleDrop = (event: React.DragEvent<HTMLDivElement>) => {
         event.preventDefault();
         setIsDragOver(false);
         const file = event.dataTransfer.files?.[0];
         processFile(file);
     };
-
     const handleDragOver = (event: React.DragEvent<HTMLDivElement>) => {
         event.preventDefault();
         setIsDragOver(true);
     };
-
     const handleDragLeave = () => {
         setIsDragOver(false);
     };
-
-
     const parseCSV = (csvText: string): FileOutput => {
-
         const lines: string[] = csvText.split("\n").slice(0, -1);
-
         if (lines.length < 2) {
             return {type: "invalidFormat", data: null}
         }
-
         const header = lines[0].split(";");
-
         if (header.length < 2 || header[0].trim().toLowerCase() !== "plz" || header[1].trim().toLowerCase() !== "ort") {
             return {type: "invalidFormat", data: null}
         }
-
         const places: Place[] = [];
-
         for (let i = 1; i < lines.length - 1; i++) {
             const line: string = lines[i];
             const cleanedData: string[] = line.split(";").map((item: string) => item.trim().replace(/"/g, '').replace(/\r/g, ''));
@@ -131,15 +114,11 @@ const FileUploader: React.FC<Props> = ({createList, isFileLoading, handleFileLoa
                 });
             }
         }
-
         if (places.length < 1) {
             return {type: "invalidFormat", data: null}
         }
-
         const existingArr = values.list?.map((item: List) => item.placeList);
-
         const res = isDuplicate(places, existingArr);
-
         if (res) {
             return {type: "isDuplicate", data: null, length: places.length};
         } else {
@@ -150,10 +129,8 @@ const FileUploader: React.FC<Props> = ({createList, isFileLoading, handleFileLoa
     const [duplicateFileContent, setDuplicateFileContent] = useState<string | null>(null);
 
     const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-
         const file = event.target.files?.[0];
         processFile(file);
-
         if (inputFileRef.current) {
             inputFileRef.current.value = "";
         }
