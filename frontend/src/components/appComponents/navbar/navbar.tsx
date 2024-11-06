@@ -40,32 +40,17 @@ const Navbar = () => {
             href="/"
             onClick={(e) => {
               e.preventDefault();
-              navigate("/");
+              navigate("/regions");
             }}
             className="navbar-bonus-plus"
             aria-label="Go to homepage"
           >
-            <strong>Bonus+</strong>
+            <strong>A Demo Project</strong>
           </a>
-
-          <a
-            href="/"
-            onClick={(e) => {
-              e.preventDefault();
-
-              navigate("/");
-            }}
-            className={`navbar-link ${isActive("/") ? "active" : ""}`}
-            {...(isActive("/") ? { "aria-current": "page" } : {})}
-          >
-            {t("bonusCalculation")}
-          </a>
-
           <a
             href="/regions"
             onClick={(e) => {
               e.preventDefault();
-
               navigate("/regions");
             }}
             className={`navbar-link ${isActive("/regions") ? "active" : ""}`}
@@ -109,7 +94,7 @@ const Navbar = () => {
             className="navbar-logo"
             src={Logo}
             alt="Siemens Logo"
-            onClick={() => navigate("/")}
+            onClick={() => navigate("/regions")}
           />
         </div>
       </div>

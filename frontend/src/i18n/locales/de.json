@@ -148,5 +148,9 @@
   "consent": "Zustimmung",
   "optionsInSystem": "Im System gibt es folgende Möglichkeiten:",
   "postcode/city": "PLZ- / Ortkombinationen",
-  "outOf": "von "
+  "outOf": "von ",
+  "downloadFileForTest": "Datei zum Testen",
+  "typos": "Tippfehler",
+  "incorrectFormat": "Falsches Format",
+  "clean": "Sauber"
 }

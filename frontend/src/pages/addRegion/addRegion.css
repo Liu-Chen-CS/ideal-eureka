@@ -1,4 +1,4 @@
-.add-region-container{
+.add-region-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -6,7 +6,7 @@
     max-width: 1350px;
 }
 
-.add-region-headline{
+.add-region-headline {
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -14,23 +14,23 @@
     align-self: flex-start;
 }
 
-.add-region-headline-left{
+.add-region-headline-left {
     display: flex;
     align-items: center;
 }
 
-.add-region-headline-left h1{
+.add-region-headline-left h1 {
     color: var(--siemens-third);
     margin-top: -5px;
     padding: 0;
 
 }
 
-.add-region-headline-right{
+.add-region-headline-right {
     display: flex;
     align-items: center;
 }
 
-.add-bonus-form{
+.add-bonus-form {
     width: 100%;
 }

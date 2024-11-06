@@ -150,6 +150,10 @@
   "correct": "Correct",
   "optionsInSystem": "There are the following options in the system:",
   "ignore": "Ignore",
-  "replace":"Replace",
-  "consent": "Consent"
+  "replace": "Replace",
+  "consent": "Consent",
+  "downloadFileForTest": "File for test",
+  "typos": "Typos",
+  "incorrectFormat": "Incorrect format",
+  "clean": "Clean"
 }

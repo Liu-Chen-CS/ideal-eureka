@@ -1,9 +1,3 @@
-.spf-regionDivision-data-container{
-    color: green;
-    font-size: 40px;
-    width: 200px;
-}
-
 .spf-regionDivision-data-inner{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
