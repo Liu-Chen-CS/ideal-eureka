@@ -26,7 +26,7 @@
  ![Static Badge](https://img.shields.io/badge/Made_with-SQLite-orange?logo=sqlite)
  ![Static Badge](https://img.shields.io/badge/Made_with-Express-orange?logo=express)
 
-### Run the project    
+### Installation    
  1. Clone the mono repo
  2. use `yarn install`
  3. after the installation use `cd frontend` and `yarn start` for starting up the frontend
